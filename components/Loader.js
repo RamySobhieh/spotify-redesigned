@@ -2,6 +2,8 @@
 import Image from "next/image";
 
 function Loader() {
+  console.log(process.env.NEXTAUTH_URL);
+
   return (
     <div className="h-screen bg-black">
       <div className="pt-40 flex flex-col items-center space-y-4">
