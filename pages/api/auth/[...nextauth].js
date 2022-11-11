@@ -43,7 +43,7 @@ async function refreshAccessToken(token) {
     };
   }
 }
-
+next_auth;
 export default NextAuth({
   providers: [
     SpotifyProvider({
