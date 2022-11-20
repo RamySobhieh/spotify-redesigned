@@ -10,7 +10,7 @@ import SpotifyWebApi from "spotify-web-api-node";
 import Player from "./Player";
 
 const spotifyApi = new SpotifyWebApi({
-  clientId: process.env.SPOTIFY_CLIENT_ID,
+  clientId: process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID,
 });
 
 function Dashboard() {

@@ -1,8 +1,10 @@
 import NextAuth from "next-auth";
 import SpotifyProvider from "next-auth/providers/spotify";
 
-/*
-Take the old token and return a new token with new properties. if there is an error return the old token with an error message
+/**
+ * Takes a token, and returns a new token with updated
+ * `accessToken` and `accessTokenExpires`. If an error occurs,
+ * returns the old token and an error property
  */
 async function refreshAccessToken(token) {
   try {
@@ -43,7 +45,7 @@ async function refreshAccessToken(token) {
     };
   }
 }
-next_auth;
+
 export default NextAuth({
   providers: [
     SpotifyProvider({
@@ -53,10 +55,6 @@ export default NextAuth({
         "https://accounts.spotify.com/authorize?scope=user-read-email,playlist-read-private,user-read-email,streaming,user-read-private,user-library-read,user-library-modify,user-read-playback-state,user-modify-playback-state,user-read-recently-played,user-follow-read",
     }),
   ],
-
-  pages: {
-    signIn: "/auth/signin",
-  },
 
   callbacks: {
     async jwt({ token, user, account }) {
