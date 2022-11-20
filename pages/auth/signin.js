@@ -9,6 +9,8 @@ function Signin({ providers }) {
   const { data: session } = useSession();
   const router = useRouter();
 
+  const checkProviders = providers;
+
   useEffect(() => {
     if (session) {
       router.push("/");
